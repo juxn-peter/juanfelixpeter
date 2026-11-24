@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Juan Felix Peter</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* VOICE everyday-professional: a marketer's front door, direct and warm
+   IDEA a working marketer's desk: one featured case file open, the rest of the practice around it
+   PICTURE a large preview of the ICME case study, drawn as a stacked file with its audience split on the cover
+   COLOUR scrub green ground shared with the case study, white, mint support, coral accent
+   TYPE Sora display + Inter text
+   LAYOUT name and pitch across the top of the green band, case-file preview beneath full width; phone stacks */
+:root{color-scheme:light dark;--bg:light-dark(#ffffff,#0c1615);--ink:light-dark(#0f1a19,#e6efed);--muted:light-dark(#4b5c59,#a3b6b2);--line:light-dark(#dbe5e2,#22332f);--panel:light-dark(#f1f7f5,#13211f);--scrub:light-dark(#0b4f4a,#0e3a36);--mint:#c9efe3;--coral:#ff6b4a}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif;overflow-x:clip}
+h1,h2,h3{font-family:Sora,Inter,sans-serif;letter-spacing:-.02em;line-height:1.08;margin:0;text-wrap:balance}
+h2{font-size:clamp(28px,3.4vw,40px)}
+h3{font-size:19px}
+p{margin:0}
+a{color:inherit}
+.band{padding-block:clamp(36px,5vw,72px);padding-inline:max(5vw,16px)}
+.wrap{max-width:1240px;margin:0 auto}
+.muted{color:var(--muted)}
+.label{font-size:14px;font-weight:600;color:var(--coral);margin-bottom:8px}
+nav{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center;justify-content:space-between;padding:14px max(5vw,16px);background:var(--scrub);color:#fff}
+nav .logo{font-family:Sora,sans-serif;font-weight:700;font-size:18px;text-decoration:none}
+nav .links{display:flex;flex-wrap:wrap;gap:6px 20px;font-size:15px;align-items:center}
+nav .links a{text-decoration:none;opacity:.85;padding:10px 0}
+nav .links a:hover{opacity:1}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 20px;border-radius:999px;font-weight:600;text-decoration:none;font-size:15px}
+.btn.solid{background:var(--coral);color:#1a0d08}
+.btn.ghost{border:1.5px solid currentColor}
+a:focus-visible{outline:3px solid var(--coral);outline-offset:3px}
+.hero{background:var(--scrub);color:#fff;padding-top:clamp(28px,4vw,56px)}
+.hero h1{font-size:clamp(40px,6vw,68px)}
+.pitch{margin-top:14px;font-family:Sora,sans-serif;font-size:clamp(20px,2.4vw,26px);color:var(--mint);max-width:30ch;line-height:1.25}
+.intro{margin-top:18px;max-width:62ch;font-size:17px;color:#e3f3ee}
+.row{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.file{display:block;text-decoration:none;margin-top:clamp(32px,4vw,52px);position:relative;color:var(--ink)}
+.file::before,.file::after{content:"";position:absolute;left:3%;right:3%;top:-10px;height:30px;border-radius:16px 16px 0 0;background:rgba(255,255,255,.18)}
+.file::after{left:6%;right:6%;top:-20px;background:rgba(255,255,255,.09)}
+.cover{position:relative;z-index:1;background:var(--bg);border-radius:18px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);overflow:hidden;box-shadow:0 20px 40px -24px rgba(0,0,0,.5);transition:transform .25s ease}
+.file:hover .cover{transform:translateY(-4px)}
+.cover-text{padding:clamp(22px,3vw,40px)}
+.cover-text h2{font-size:clamp(24px,2.8vw,34px);margin-top:4px}
+.cover-text p{margin-top:12px;color:var(--muted)}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.tags span{font-size:13px;font-weight:600;padding:5px 11px;border-radius:999px;background:var(--panel);white-space:nowrap}
+.open{display:inline-block;margin-top:20px;font-weight:600;color:var(--coral)}
+.cover-art{background:#13294b;padding:clamp(20px,3vw,34px);display:grid;gap:12px;align-content:center}
+.lane{border-radius:14px;padding:14px 16px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);color:#fff}
+.lane.local{background:rgba(255,107,74,.16);border-color:rgba(255,107,74,.5)}
+.lane b{font-family:Sora,sans-serif;font-size:15px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.chip{background:#fff;color:#13294b;font-size:13px;font-weight:600;padding:4px 10px;border-radius:999px;white-space:nowrap}
+.lane.local .chip{background:var(--coral);color:#1a0d08}
+.src{color:#c9d6e8;font-size:13px}
+.src b{color:#fff;font-family:Sora,sans-serif;font-size:28px;margin-right:6px}
+.services{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;margin-top:28px}
+.services div{border-top:2px solid var(--ink);padding-top:14px}
+.services p{font-size:15px;color:var(--muted);margin-top:8px}
+.head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:16px 48px;align-items:end}
+.panel{background:var(--panel)}
+.work{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:28px}
+.wcard{border:1px solid var(--line);border-radius:16px;padding:24px;background:var(--bg);text-decoration:none;display:flex;flex-direction:column;gap:10px}
+.wcard small{font-size:13px;font-weight:600;color:var(--coral)}
+.wcard p{color:var(--muted);font-size:15px}
+.wcard .more{margin-top:auto;font-weight:600}
+.wcard.soon{border-style:dashed;background:transparent}
+.about{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(24px,4vw,56px)}
+.about p+p{margin-top:14px}
+.creds{display:grid;gap:0}
+.creds div{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 16px;padding:14px 0;border-bottom:1px solid var(--line)}
+.creds div:first-child{border-top:2px solid var(--ink)}
+.creds b{font-weight:600}
+.creds span{color:var(--muted);font-size:14px;white-space:nowrap}
+.tools{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.tools span{border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:14px;white-space:nowrap}
+.cta{background:var(--scrub);color:#fff}
+.cta p{margin-top:12px;color:#d6ece6;max-width:56ch}
+footer{padding:28px max(5vw,16px);font-size:14px;color:var(--muted);display:flex;flex-wrap:wrap;gap:10px 28px;justify-content:space-between;border-top:1px solid var(--line)}
+@media(max-width:900px){.services{grid-template-columns:repeat(2,minmax(0,1fr))}.head{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:700px){.cover{grid-template-columns:minmax(0,1fr)}.work{grid-template-columns:minmax(0,1fr)}.about{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:480px){.services{grid-template-columns:minmax(0,1fr)}.creds div{grid-template-columns:minmax(0,1fr)}}
+@media(prefers-reduced-motion:reduce){.cover{transition:none}.file:hover .cover{transform:none}}
+</style>
+</head>
+<body>
+
+<nav aria-label="Main">
+  <a class="logo" href="#top">Juan Felix Peter</a>
+  <div class="links">
+    <a href="#work">Work</a>
+    <a href="#services">Services</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<header class="band hero" id="top">
+  <div class="wrap">
+    <h1>Juan Felix Peter</h1>
+    <p class="pitch">Digital marketer for SEO, paid ads, social media and lead generation.</p>
+    <p class="intro">I help education and service businesses get found by the right people and turn interest into enquiries. I start with who the audience really is, then build the website, search, social and follow-up around them.</p>
+    <div class="row">
+      <a class="btn solid" href="#contact">Work with me</a>
+      <a class="btn ghost" href="#work">View my work</a>
+    </div>
+
+    <a class="file" href="icme-india.html" aria-label="Open the ICME India case study">
+      <div class="cover">
+        <div class="cover-text">
+          <p class="label">Featured case study · Freelance</p>
+          <h2>Marketing one medical institute to two very different markets</h2>
+          <p>ICME India runs 14+ programs, from overseas licensing exams to hands-on clinical workshops. I audited the site, restructured how courses were presented, and built search, social and lead generation around the split.</p>
+          <div class="tags"><span>Website audit</span><span>SEO</span><span>Google Ads</span><span>Meta Ads</span><span>Lead generation</span></div>
+          <span class="open">Read the case study →</span>
+        </div>
+        <div class="cover-art" aria-hidden="true">
+          <p class="src"><b>14</b>programs, two markets</p>
+          <div class="lane"><b>Exam candidates, India and abroad</b><div class="chips"><span class="chip">PLAB</span><span class="chip">AMC</span><span class="chip">NZREX</span><span class="chip">USMLE</span><span class="chip">MRCP</span><span class="chip">NEET PG</span><span class="chip">OET</span></div></div>
+          <div class="lane local"><b>Hands-on training, around Trivandrum</b><div class="chips"><span class="chip">ECG</span><span class="chip">ACLS</span><span class="chip">Suturing</span><span class="chip">Elderly care</span></div></div>
+        </div>
+      </div>
+    </a>
+  </div>
+</header>
+
+<section class="band" id="services">
+  <div class="wrap">
+    <div class="head">
+      <div><p class="label">Services</p><h2>What I can do for you</h2></div>
+      <p class="muted">Each piece works alone, but they work best connected: the page, the ad that points to it, and the follow-up when someone enquires.</p>
+    </div>
+    <div class="services">
+      <div><h3>SEO and website audits</h3><p>Technical fixes, page structure, keyword mapping and content that ranks for what your audience searches.</p></div>
+      <div><h3>Paid search and social</h3><p>Google Ads and Meta Ads structured by audience and location, with A/B tests and negative keywords.</p></div>
+      <div><h3>Content and social media</h3><p>Content calendars, captions and creatives sized for a small team to keep up.</p></div>
+      <div><h3>Lead generation and CRM</h3><p>Enquiry flows, WhatsApp and form journeys, and tracking so you know which channel brings results.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band panel" id="work">
+  <div class="wrap">
+    <p class="label">Work</p>
+    <h2>Selected projects</h2>
+    <div class="work">
+      <a class="wcard" href="icme-india.html">
+        <small>Medical education · Freelance</small>
+        <h3>ICME India</h3>
+        <p>Website audit, course-page rebuild, SEO, Google and Meta Ads, social content and a WhatsApp enquiry flow for a Thiruvananthapuram institute.</p>
+        <span class="more">Read the case study →</span>
+      </a>
+      <div class="wcard soon">
+        <small>Coming soon</small>
+        <h3>Next case study</h3>
+        <p>More projects are being written up and will be added here.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="about">
+  <div class="wrap about">
+    <div>
+      <p class="label">About</p>
+      <h2>Marketing built on knowing the customer</h2>
+      <p style="margin-top:18px">Most of my career has been spent close to customers. I've handled B2B accounts and customer cases in CRM systems, worked in donor relations at a nonprofit, and done finance and admin work. That's where I learned that people respond to messages written for them, not for everyone.</p>
+      <p>I bring that to marketing. I hold the Google Digital Marketing certificate, and my business studies covered SQL, Python and Power BI, so I'm as comfortable reading the data as writing the ad.</p>
+      <div class="tools">
+        <span>Google Ads</span><span>Meta Ads Manager</span><span>Google Analytics 4</span><span>Search Console</span><span>Keyword Planner</span><span>WordPress</span><span>Canva</span><span>Dynamics 365</span><span>Salesforce</span><span>Excel</span><span>Power BI</span>
+      </div>
+    </div>
+    <div class="creds">
+      <div><b>Google Digital Marketing certificate</b><span>Google</span></div>
+      <div><b>Graduate certificate, Financial Technology</b><span>Conestoga College</span></div>
+      <div><b>Graduate certificate, Global Business Management</b><span>Conestoga College</span></div>
+      <div><b>BA, Economics</b><span>University of Kerala</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="band cta" id="contact">
+  <div class="wrap">
+    <h2>Have an audience you want to reach?</h2>
+    <p>Tell me about your business and who you're trying to reach. I'll tell you honestly where I'd start.</p>
+    <div class="row">
+      <a class="btn solid" href="#contact">Email me</a>
+      <a class="btn ghost" href="#contact">Connect on LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>© 2026 Juan Felix Peter · Digital marketing</span>
+  <a href="#top">Back to top</a>
+</footer>
+
+</body>
+</html>
